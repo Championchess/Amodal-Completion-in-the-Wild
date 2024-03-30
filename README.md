@@ -11,8 +11,9 @@ This is the official implementation of CVPR 2024 paper "Amodal Ground Truth and 
 
 Evaluation dataset: [mp3d_eval.zip](https://drive.google.com/file/d/1TiNIos20P-_5nIgD-hnrrZsFHg4-mn10/view?usp=sharing)
 Training dataset: [mp3d_train.zip](https://drive.google.com/file/d/1MFhujh2vDRQ3WyzUf-FACUw4U9y4mmbX/view?usp=sharing)
+Annotations: [annotations](https://drive.google.com/file/d/1tk2lafwEQ5NYBwqKRi1i8wsia5mSgALv/view?usp=sharing) (same with COCOA)
 
-Install and Inference code: [github](https://github.com/ducminhkhoi/Amodal-Instance-Seg-ASBU)
+Install and Inference code: [github](https://github.com/ducminhkhoi/Amodal-Instance-Seg-ASBU) 
 
 
 ## Citation
