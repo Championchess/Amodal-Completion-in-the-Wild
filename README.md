@@ -67,6 +67,15 @@ python dift/extract_dift_amodal.py
 sh tools/test_SDAmodal.sh
 ```
 
+## Concurrent Work
+
+[pix2gestalt: Amodal Segmentation by Synthesizing Wholes](https://github.com/cvlab-columbia/pix2gestalt)
+
+[Amodal Completion via Progressive Mixed Context Diffusion](https://github.com/k8xu/amodal)
+
+[TAO-Amodal: A Benchmark for Tracking Any Object Amodally](https://github.com/WesleyHsieh0806/TAO-Amodal)
+
+
 ## Maintainers
 @Championchess 
 guanqi@robots.ox.ac.uk
