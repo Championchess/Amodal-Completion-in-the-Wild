@@ -7,5 +7,10 @@ tensorboardX
 networkx
 cvbase
 scikit-image
-pillow==6.1
+pillow
 tqdm
+pycocotools
+ipdb
+diffusers==0.15.0
+huggingface-hub==0.23.2
+accelerate==0.19.0

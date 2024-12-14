@@ -3,7 +3,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-import utils
+from libs import utils
 import inference as infer
 from . import SingleStageModel
 
@@ -25,18 +25,36 @@ class AWSDM(SingleStageModel):
         self.mask = mask.cuda()
         self.target = target.cuda()
 
-    def evaluate(self, image, inmodal, category, bboxes, amodal, gt_order_matrix, input_size):
+    def evaluate(
+        self,
+        image,
+        inmodal,
+        category,
+        bboxes,
+        amodal,
+        gt_order_matrix,
+        input_size,
+    ):
         # amodal
         amodal_patches_pred = infer.infer_amodal_sup(
-            self, image, inmodal, category, bboxes,
+            self,
+            image,
+            inmodal,
+            category,
+            bboxes,
             use_rgb=self.use_rgb,
-            th=self.params['inference']['positive_th_amodal'],
+            th=self.params["inference"]["positive_th_amodal"],
             input_size=input_size,
-            min_input_size=16, interp=self.params['inference']['amodal_interp'])
+            min_input_size=16,
+            interp=self.params["inference"]["amodal_interp"],
+        )
         amodal_pred = infer.patch_to_fullimage(
-            amodal_patches_pred, bboxes,
-            image.shape[0], image.shape[1],
-            interp=self.params['inference']['amodal_interp'])
+            amodal_patches_pred,
+            bboxes,
+            image.shape[0],
+            image.shape[1],
+            interp=self.params["inference"]["amodal_interp"],
+        )
         intersection = ((amodal_pred == 1) & (amodal == 1)).sum()
         union = ((amodal_pred == 1) | (amodal == 1)).sum()
         target = (amodal == 1).sum()
@@ -51,8 +69,11 @@ class AWSDM(SingleStageModel):
                 output = self.model(self.mask)
             if output.shape[2] != self.mask.shape[2]:
                 output = nn.functional.interpolate(
-                    output, size=self.mask.shape[2:4],
-                    mode="bilinear", align_corners=True)
+                    output,
+                    size=self.mask.shape[2:4],
+                    mode="bilinear",
+                    align_corners=True,
+                )
         comp = output.argmax(dim=1, keepdim=True).float()
 
         vis_target = self.target.cpu().clone().float()
@@ -63,11 +84,13 @@ class AWSDM(SingleStageModel):
             cm_tensors = [self.rgb]
         else:
             cm_tensors = []
-        ret_tensors = {'common_tensors': cm_tensors,
-                       'mask_tensors': [self.mask, comp, vis_target]}
+        ret_tensors = {
+            "common_tensors": cm_tensors,
+            "mask_tensors": [self.mask, comp, vis_target],
+        }
         if ret_loss:
             loss = self.criterion(output, self.target) / self.world_size
-            return ret_tensors, {'loss': loss}
+            return ret_tensors, {"loss": loss}
         else:
             return ret_tensors
 
@@ -81,4 +104,4 @@ class AWSDM(SingleStageModel):
         loss.backward()
         utils.average_gradients(self.model)
         self.optim.step()
-        return {'loss': loss}
+        return {"loss": loss}
