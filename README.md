@@ -46,12 +46,15 @@ Evaluation dataset: [mp3d_eval.zip](https://drive.google.com/file/d/1TiNIos20P-_
 
 Training dataset: [mp3d_train.zip](https://drive.google.com/file/d/1MFhujh2vDRQ3WyzUf-FACUw4U9y4mmbX/view?usp=sharing)
 
-Annotations: [annotations](https://drive.google.com/file/d/1tk2lafwEQ5NYBwqKRi1i8wsia5mSgALv/view?usp=sharing) (same with COCOA)
+Evaluation Annotations: [annotations](https://drive.google.com/file/d/1tk2lafwEQ5NYBwqKRi1i8wsia5mSgALv/view?usp=sharing) (same with COCOA)
+
+Training Annotations: [annotations](https://drive.google.com/file/d/1rt48Iqz-T5Q5wFyBGH0S0sggnR4SCp--/view?usp=sharing) (same with COCOA)
 
 
 ## Model
 
 [Checkpoint for SDAmodal](https://drive.google.com/file/d/1cqx8AMa8KUv2OHwaZSJkmrWjPUyhI01S/view?usp=sharing)
+
 
 
 ## Extract Stable Diffusion Feature
