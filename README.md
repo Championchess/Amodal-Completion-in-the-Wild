@@ -42,18 +42,18 @@ pip install ipdb
 
 ## MP3D-Amodal Benchmark
 
-Evaluation dataset: [mp3d_eval.zip](https://drive.google.com/file/d/1TiNIos20P-_5nIgD-hnrrZsFHg4-mn10/view?usp=sharing)
+Evaluation dataset: [mp3d_eval.zip](https://thor.robots.ox.ac.uk/amodal/mp3d_eval.zip)
 
-Training dataset: [mp3d_train.zip](https://drive.google.com/file/d/1MFhujh2vDRQ3WyzUf-FACUw4U9y4mmbX/view?usp=sharing)
+Training dataset: [mp3d_train.zip](https://thor.robots.ox.ac.uk/amodal/mp3d_train.zip)
 
-Evaluation Annotations: [annotations](https://drive.google.com/file/d/14kI0ECSKjVC6B8WbIKbE_IeSPw2rHrnd/view?usp=sharing) (same with COCOA)
+Evaluation Annotations: [annotations](https://thor.robots.ox.ac.uk/amodal/MP3D_seleted_eval_10.29.pkl) (same with COCOA)
 
-Training Annotations: [annotations](https://drive.google.com/file/d/1CcGpxUB4whOROPF07n3S_LxeEsbCX7In/view?usp=sharing) (same with COCOA)
+Training Annotations: [annotations](https://thor.robots.ox.ac.uk/amodal/MP3D_seleted_train_10.29.pkl) (same with COCOA)
 
 
 ## Model
 
-[Checkpoint for SDAmodal](https://drive.google.com/file/d/1cqx8AMa8KUv2OHwaZSJkmrWjPUyhI01S/view?usp=sharing)
+[Checkpoint for SDAmodal](https://thor.robots.ox.ac.uk/amodal/ckpt_SDAmodal.tar)
 
 
 
